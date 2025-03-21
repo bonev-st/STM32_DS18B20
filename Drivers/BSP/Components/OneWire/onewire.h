@@ -21,7 +21,7 @@
 #include "main.h"
 
 /* Driver Selection ----------------------------------------------------------*/
-//#define LL_Driver
+#define LL_Driver
 
 /* Common Register -----------------------------------------------------------*/
 #define ONEWIRE_CMD_SEARCHROM			0xF0
@@ -55,8 +55,10 @@ uint8_t OneWire_Reset(OneWire_t* OW);
 uint8_t OneWire_ReadBit(OneWire_t* OW);
 uint8_t OneWire_ReadByte(OneWire_t* OW);
 void OneWire_WriteByte(OneWire_t* OW, uint8_t byte);
-void OneWire_SelectWithPointer(OneWire_t* OW, uint8_t *Rom);
+void OneWire_SelectWithPointer(OneWire_t* OW, const uint8_t *Rom);
 uint8_t OneWire_CRC8(uint8_t *addr, uint8_t len);
+void OneWire_DelayUS(uint32_t delay);
+void OneWire_DelayMS(uint32_t delay);
 
 #ifdef __cplusplus
 }
